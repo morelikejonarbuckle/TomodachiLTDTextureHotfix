@@ -14,13 +14,13 @@ def gammaedit(img: Image, gamma: int = 0.4545):
 
 
 def canvas_2_png(img):
-    convertSize = (256, 256)
+    convert_size  = (256, 256)
     gob_w, gob_h = 1, 1
     bytes_per_block = 4
-    swizzled = nsw_deswizzle(raw_data, (convertSize[0], convertSize[1]), (gob_w, gob_h), bytes_per_block, SWIZZLE_MODE)
+    swizzled = nsw_deswizzle(raw_data, (convert_size[0], convert_size[1]), (gob_w, gob_h), bytes_per_block, SWIZZLE_MODE)
 
     if select == 1:
-        img = Image.frombytes('RGBA', convertSize, swizzled, 'raw', 'RGBA')
+        img = Image.frombytes('RGBA', convert_size, swizzled, 'raw', 'RGBA')
 
     img = img.convert()
     img = gammaedit(img)
