@@ -44,6 +44,8 @@ def canvas_2_png(img):
 
 
 def png_2_canvas(imagePath, useSrgb=False):
+    imagePath = Path(str(imagePath).strip().strip('"').strip("'"))
+    img = Image.open(str(imagePath))
     image_res = 0
     img = Image.open(imagePath)
 
@@ -113,8 +115,9 @@ def ugctex_2_png(img):
 
 
 def png_2_ugctex(imagePath, useSrgb=False):
+    imagePath = Path(str(imagePath).strip().strip('"').strip("'"))
     image_res = 0
-    img = Image.open(imagePath)
+    img = Image.open(str(imagePath))
     convert_size = (512, 512)
 
     if img.size != convert_size:
