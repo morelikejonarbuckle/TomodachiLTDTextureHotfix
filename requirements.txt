@@ -4,3 +4,7 @@ numpy==2.4.4
 pathlib==1.0.1
 pillow==12.2.0
 pyswizzle==1.0.2
+
+how to install/update (windows? hope this is universal, only leaving this for myself)
+
+pip install --upgrade numpy pathlib pillow pyswizzle
